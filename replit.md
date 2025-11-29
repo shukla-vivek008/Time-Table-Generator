@@ -26,7 +26,7 @@ Preferred communication style: Simple, everyday language.
 
 **Styling Approach:** Tailwind CSS with custom CSS variables for theming. Supports light and dark mode toggling with localStorage persistence. Design system uses specific spacing units (2, 4, 6, 8) and responsive breakpoints (mobile-first, md: 768px, lg: 1024px).
 
-**Scheduling Algorithm:** Client-side greedy scheduling algorithm for auto-arrange functionality. Sorts classes by start time, tracks occupied time slots per day, and attempts to reschedule conflicting classes in 30-minute increments within a 6 AM - 10 PM window.
+**Scheduling Algorithm:** Client-side greedy scheduling algorithm for auto-arrange functionality. Sorts classes by duration (longest first) to prioritize harder-to-place items, tracks occupied time slots per day independently, and attempts to reschedule conflicting classes in 30-minute increments within a 6 AM - 10 PM window. Multi-day classes are handled atomically (all days must have availability for the same time). Includes final verification to ensure no conflicts remain after arranging.
 
 ### Backend Architecture
 
